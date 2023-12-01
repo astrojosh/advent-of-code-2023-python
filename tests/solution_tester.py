@@ -75,6 +75,11 @@ class SolutionTester(ABC):
     def file_path(self, file_name: str) -> str:
         """The file path of the data with the associated file name.
 
+        Parameters
+        ----------
+        file_name: str
+            The file name of the data.
+
         Returns
         -------
         str: The file path of the data with the associated file name.
@@ -83,6 +88,11 @@ class SolutionTester(ABC):
 
     def load_data(self, file_name: str) -> str:
         """Loads in the data from the file.
+
+        Parameters
+        ----------
+        file_name: str
+            The file name of the data.
 
         Returns
         -------
@@ -94,6 +104,11 @@ class SolutionTester(ABC):
 
     def file_exists(self, file_name: str) -> bool:
         """Checks if the file name exists.
+
+        Parameters
+        ----------
+        file_name: str
+            The file name of the data.
 
         Returns
         -------
