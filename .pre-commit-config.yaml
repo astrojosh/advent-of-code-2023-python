@@ -1,0 +1,44 @@
+repos:
+- repo: local
+  hooks:
+    - id: end-of-file-fixer
+      name: end-of-file-fixer
+      entry: end-of-file-fixer
+      language: system
+
+    - id: trailing-whitespace-fixer
+      name: trailing-whitespace-fixer
+      entry: trailing-whitespace-fixer
+      language: system
+
+    - id: black
+      name: black
+      entry: black
+      language: system
+      types: [python]
+
+    - id: isort
+      name: isort
+      entry: isort
+      language: system
+      types: [python]
+      args: ["--profile", "black"]
+
+    - id: pylint
+      name: pylint
+      entry: pylint
+      language: system
+      types: [python]
+
+    - id: mypy
+      name: mypy
+      entry: mypy
+      language: system
+      types: [python]
+      args: ["--strict"]
+
+    - id: pytest
+      name: pytest
+      entry: pytest
+      language: system
+      types: [python]

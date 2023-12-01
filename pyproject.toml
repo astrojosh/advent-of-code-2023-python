@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "advent-of-code-2023-python"
+version = "0.1.0"
+description = "Code to solve the Advent of Code 2023 problems, written in Python"
+authors = ["astrojosh"]
+readme = "README.md"
+packages = [{include = "src"}]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+
+[tool.poetry.group.dev.dependencies]
+isort = "^5.12.0"
+black = "^23.11.0"
+pylint = "^3.0.2"
+mypy = "^1.7.1"
+pytest = "^7.4.3"
+pre-commit = "^3.5.0"
+pre-commit-hooks = "^4.5.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
