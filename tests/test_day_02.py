@@ -3,7 +3,7 @@
 from .solution_tester import SolutionTester
 
 
-class TestDay2(SolutionTester):
+class TestDay02(SolutionTester):
     """Class for testing the solution to the problem set on day 2."""
 
     @property
@@ -24,4 +24,4 @@ class TestDay2(SolutionTester):
 
 
 if __name__ == "__main__":
-    TestDay2.display_outputs()
+    TestDay02.display_outputs()
