@@ -19,8 +19,8 @@ def remove_letters(string: str) -> str:
 
 
 def calculate_digit_sum(input_data: str) -> int:
-    digits = [remove_letters(line) for line in input_data.splitlines()]
-    first_and_last_digits = [int(digit[0] + digit[-1]) for digit in digits]
+    digits = (remove_letters(line) for line in input_data.splitlines())
+    first_and_last_digits = (int(digit[0] + digit[-1]) for digit in digits)
     return sum(first_and_last_digits)
 
 
