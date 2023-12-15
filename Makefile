@@ -1,3 +1,5 @@
+.PHONY: run test
+
 run:
 	@python -m tests.test_day_$(day)
 
