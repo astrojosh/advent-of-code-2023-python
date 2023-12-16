@@ -57,13 +57,32 @@ class Card:
         return self.num_matches + nested_matches
 
 
+@dataclass
+class Cards:
+    cards: list[Card]
+
+    def __post_init__(self) -> None:
+        for card in self.cards:
+            card.calculate_winning_cards(self.cards)
+
+    @classmethod
+    def from_string(cls, string: str) -> Self:
+        return cls([Card.from_line(line) for line in string.splitlines()])
+
+    @property
+    def total_score(self) -> int:
+        return sum(card.score for card in self.cards)
+
+    @property
+    def total_cards(self) -> int:
+        return sum(1 + card.num_winning_cards for card in self.cards)
+
+
 def part_1_answer(input_data: str) -> int:
-    cards = (Card.from_line(line) for line in input_data.splitlines())
-    return sum(card.score for card in cards)
+    cards = Cards.from_string(input_data)
+    return cards.total_score
 
 
 def part_2_answer(input_data: str) -> int:
-    cards = [Card.from_line(line) for line in input_data.splitlines()]
-    for card in cards:
-        card.calculate_winning_cards(cards)
-    return sum(1 + card.num_winning_cards for card in cards)
+    cards = Cards.from_string(input_data)
+    return cards.total_cards
